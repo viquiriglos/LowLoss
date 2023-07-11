@@ -1,7 +1,7 @@
 matplotlib
 numpy
-pandas==1.5.3
-Pillow==10.0.0
-plotly==5.13.1
+pandas
+Pillow
+plotly
 shapesimilarity==0.0.1
-streamlit==1.17.0
+streamlit
