@@ -347,6 +347,17 @@ col1.write(df_max)
 df_deltas=pd.DataFrame([DeltaE_pico1, DeltaE_pico2, "-"], ["E_max - E_max_Ref1", "E_max - E_max_Ref2", ""],  columns=["Delta E_peak(eV)"]) 
 col2.write(df_deltas)
 
+if DeltaE_pico1<DeltaE_pico2:
+    col1.write('The Energy peak is closer to Ref.1')
+    col2.write('\n')
+    col2.write('\n')
+    col2.write('\n')
+elif DeltaE_pico1>DeltaE_pico2:
+    col1.write('The Energy peak is closer to Ref.2')
+    col2.write('\n')
+    col2.write('\n')
+    col2.write('\n')
+
 col1.subheader("Comparing to Ref.1")
 col1.write(fig3)
 
@@ -368,6 +379,10 @@ raiz_suma2 = sqrt(suma_ref2)
 st.write('Sqr Distance for Ref.1', round(raiz_suma1, 2))
 st.write('Sqr Distance for Ref.2', round(raiz_suma2, 2))
 
+if raiz_suma1<raiz_suma2:
+    st.write('The analyzed spectra shape is closer to Ref.1')
+elif raiz_suma1>raiz_suma2:
+    st.write('The analyzed spectra shape is closer to Ref.2')
 
 # Busco el indice de x_min y x_max
 # x_min_ind1 = (df1b[df1b[X1]>=x_min].index).min()
